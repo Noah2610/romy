@@ -1,0 +1,11 @@
+[workspace]
+
+members = [
+  "romy",
+  "romy-core",
+  "romy-engine",
+  "romy-wasmer",
+  "romy-sdl",
+  "romy-web",
+  "examples/simple",
+]

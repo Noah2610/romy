@@ -1,0 +1,32 @@
+<html>
+
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    #romy {
+      width: 100%;
+      height: 100%;
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <script type="module">
+    import { bind, default as init } from './pkg/romy_web.js';
+    async function run() {
+      await init('./pkg/romy_web_bg.wasm');
+      let args = window.location.href.split("?")[1];
+      bind(document.getElementById('romy'), args, WebAssembly.instantiateStreaming != undefined);
+    }
+    run();
+  </script>
+  <div id="romy"></div>
+</body>
+
+</html>

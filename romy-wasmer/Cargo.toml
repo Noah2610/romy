@@ -1,0 +1,23 @@
+[package]
+name = "romy-wasmer"
+version = "0.1.0"
+authors = ["catt-io <catt-io@users.noreply.github.com>"]
+edition = "2018"
+license = "MIT"
+documentation = "https://github.com/catt-io/romy"
+repository = "https://github.com/catt-io/romy"
+homepage = "http://www.romy.xyz"
+description = """
+A runtime for portable, archivable and deterministic video games.
+"""
+categories = ["games"]
+keywords = ["game", "runtime"]
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies.wasmer-runtime]
+version = "0.3.0"
+
+[dependencies]
+romy-core = "0.1.0"
+byteorder = "1.2.7"
+serde = "1.0.85"
+serde_derive = "1.0.85"
