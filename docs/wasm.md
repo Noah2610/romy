@@ -11,7 +11,7 @@ Allocates some space inside the modules default memory and returns a pointer to 
 
 * `func $deallocate (param i32)`
 
-Frees memory that was allocated with `$allocate`, the pointer returned from `$allocate` is passed as the parameter. Memory being deallocated should be zeroed by the runtime beforehand.
+Frees memory that was allocated with `$allocate`, the pointer returned from `$allocate` is passed as the parameter.
 
 * `func $init (result i32)`
 
