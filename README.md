@@ -23,7 +23,7 @@ Once you have those, build and install with
 Alternatively you can clone this repository and use other cargo commands to customize the build.
 
 ## Prebuilt Binaries
-Builds can be grabbed from the [releases page for this repo](https://github.com/catt-io/romy/releases), a web build is always usable at [play.romy.xyz](http://play.romy.xyz) too.
+Builds can be grabbed from the [releases page for this repo](https://github.com/catt-io/romy/releases), a hosted web build is always usable at [play.romy.xyz](http://play.romy.xyz) too.
 
 # Creating a Game
 Any set of tools that can produce a wasm binary can be used to make games, here's some example steps for making one using the rust crate supplied by this project:
