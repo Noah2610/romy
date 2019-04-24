@@ -5,7 +5,4 @@ authors = ["Catt <catt-io@users.noreply.github.com>"]
 edition = "2018"
 
 [dependencies]
-romy = { path = "../../romy" }
-
-# [profile.release]
-# lto = true
+romy = "0.1.1"

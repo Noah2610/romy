@@ -42,7 +42,7 @@ Any set of tools that can produce a wasm binary can be used to make games, here'
 
 ```toml
 [dependencies]
-romy = "0.1.0"
+romy = "0.1.1"
 ```
 
 **5.** Open `romy_demo/src/main.rs`, and replace any the existing code with the following, comments are embedded to walk you through what each bit of code is doing.
