@@ -153,7 +153,7 @@ enum KeyCode {
 
 * `func $draw (param i32) (result i32)`
 
-Creates a rendering of the game, the param is a pointer to an encoded `DrawArguments` structure and the return value is a pointer to an encoded `Image` structure. The runtime is responsible for calling deallocate on the parameter and return data. The memory passed as the parameter can be freed when the call returns. The memory must be deallocated before making any other calls.
+Creates a rendering of the game, the param is a pointer to an encoded `DrawArguments` structure and the return value is a pointer to an encoded `Image` structure. The runtime is responsible for calling deallocate on the parameter and return data. The memory passed as the parameter can be deallocated when the call returns. The memory must be deallocated before making any other calls. The parameter must be deallocated first.
 
 ```
 DrawArguments {
@@ -179,7 +179,7 @@ Image {
 
 * `func $render_audio (param i32) (result i32)`
 
-Creates a chunk of sound spanning one step, the param is a pointer to an encoded `RenderAudioArguments` structure and the return value is a pointer to an encoded `Sound` structure. The runtime is responsible for calling deallocate on the parameter and return data. The memory passed as the parameter can be freed when the call returns. The memory must be deallocated before making any other calls.
+Creates a chunk of sound spanning one step, the param is a pointer to an encoded `RenderAudioArguments` structure and the return value is a pointer to an encoded `Sound` structure. The runtime is responsible for calling deallocate on the parameter and return data. The memory passed as the parameter can be deallocated when the call returns. The memory must be deallocated before making any other calls. The parameter must be deallocated first.
 
 ```
 RenderAudioArguments {
