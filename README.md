@@ -5,7 +5,7 @@ Romy is a runtime for **portable**, **archivable** and **deterministic** video g
 Romy games will run on any platform where the runtime can be built. It will do its best to map available input and output to the needs of the game. Games are compiled as [Web Assembly](https://webassembly.org/) (Wasm) binaries and communication is done via a set of simple [exported functions](docs/wasm.md); covering input, graphics and sound. Because games are Wasm files, a bunch of languages and tools can be used to make them. This project provides a Rust crate to assist with game creation.
 
 ## Archivability 
-Romy games are single files that have no access to any disk or network. Because of this they can't use any external information, can't have microtransactions and can't be updated. They will run the same years from now as they do today.
+Romy games are single files that have no access to any disk or network. Because of this they can't use any external information, can't have microtransactions and they can't be updated. They will run the same years from now as they do today.
 
 ## Determinism
 Romy games will always have the same outcome if given the same inputs. Games declare a fixed time between simulation steps and the runtime sticks to this as closely as possible. There are mechanisms to keep memory untouched between steps and all input is tied to a discrete step. Wasm was chosen as the instruction set as it is designed to run identically across platforms. Because of this determinism it will be possible in the future to support replays, network play, save states, rewinding and other cool and unique features.
