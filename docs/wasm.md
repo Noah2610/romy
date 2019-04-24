@@ -11,11 +11,11 @@ Allocates some space inside the modules default memory and returns a pointer to 
 
 * `func $deallocate (param i32)`
 
-Frees memory that was allocated with `$allocate`, the pointer returned from `$allocate` is passed as the parameter.
+Frees memory that was allocated with `$allocate`, the pointer returned from `$allocate` is passed as the parameter. Memory being deallocated should be zeroed by the runtime beforehand.
 
 * `func $init (result i32)`
 
-Initializes the game and returns a pointer into the modules default memory that points to an encoded `Info` structure. The runtime is responsible for calling deallocate on the returned data when it is done using it.
+Initializes the game and returns a pointer into the modules default memory that points to an encoded `Info` structure. The runtime is responsible for calling deallocate on the returned data when it is done using it, but before making any other calls.
 
 ```
 Info {
@@ -40,7 +40,7 @@ enum InputDeviceType {
 
 * `func $step (param i32)`
 
-Simulates the game forward one step, the param is a pointer to an encoded `StepArguments` structure.  The runtime is responsible for calling deallocate on the parameter data, this can be done safely after the function returns.
+Simulates the game forward one step, the param is a pointer to an encoded `StepArguments` structure.  The runtime is responsible for calling deallocate on the parameter data, this can be done safely after the function returns, but must happen before making any other calls.
 
 ```
 StepArguments {
@@ -153,7 +153,7 @@ enum KeyCode {
 
 * `func $draw (param i32) (result i32)`
 
-Creates a rendering of the game, the param is a pointer to an encoded `DrawArguments` structure and the return value is a pointer to an encoded `Image` structure. The runtime is responsible for calling deallocate on the parameter and return data. The memory passed as the parameter can be freed when the call returns.
+Creates a rendering of the game, the param is a pointer to an encoded `DrawArguments` structure and the return value is a pointer to an encoded `Image` structure. The runtime is responsible for calling deallocate on the parameter and return data. The memory passed as the parameter can be freed when the call returns. The memory must be deallocated before making any other calls.
 
 ```
 DrawArguments {
@@ -179,7 +179,7 @@ Image {
 
 * `func $render_audio (param i32) (result i32)`
 
-Creates a chunk of sound spanning one step, the param is a pointer to an encoded `RenderAudioArguments` structure and the return value is a pointer to an encoded `Sound` structure. The runtime is responsible for calling deallocate on the parameter and return data. The memory passed as the parameter can be freed when the call returns.
+Creates a chunk of sound spanning one step, the param is a pointer to an encoded `RenderAudioArguments` structure and the return value is a pointer to an encoded `Sound` structure. The runtime is responsible for calling deallocate on the parameter and return data. The memory passed as the parameter can be freed when the call returns. The memory must be deallocated before making any other calls.
 
 ```
 RenderAudioArguments {
