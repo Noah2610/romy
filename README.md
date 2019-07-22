@@ -30,7 +30,7 @@ Any set of tools that can produce a wasm binary can be used to make games, here'
 
 **1.** Make sure you have rust installed, grab it from https://www.rust-lang.org.
 
-**2.** Install the Rust `wasm32-unknown-unknown`, target, if you installed rust with rustup this can be done with:
+**2.** Install the Rust `wasm32-unknown-unknown` target, if you installed rust with rustup this can be done with:
 
 `rustup target add wasm32-unknown-unknown`
 
@@ -45,7 +45,7 @@ Any set of tools that can produce a wasm binary can be used to make games, here'
 romy = "0.1.1"
 ```
 
-**5.** Open `romy_demo/src/main.rs`, and replace any the existing code with the following, comments are embedded to walk you through what each bit of code is doing.
+**5.** Open `romy_demo/src/main.rs`, and replace all the existing code with the following; comments are embedded to walk you through what each bit of code is doing.
 
 ```rust
 // Bring in Romy:
@@ -163,7 +163,7 @@ impl Game for Demo {
 
 **6.** Build the game with cargo, from the `romy_demo` directory run:
 
-`cargo build --target wasm-32-unknown-unknown --release`
+`cargo build --target wasm32-unknown-unknown --release`
 
 This will put a .wasm file at `romy_demo/target/wasm32-unknown-unknown/release/romy_demo.wasm`
 
